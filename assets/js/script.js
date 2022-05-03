@@ -25,18 +25,23 @@ document.querySelector('#form-login').addEventListener('submit', e => {
   let email = document.querySelector('#email').value;
   let password = document.querySelector('#password').value;
 
-  let jason = {
-      email: email,
-      password
+  let json = {
+    email,
+    password
     
   };
-  console.log(json);
 
-  let stringJSON = JSON.stringify(json);
-  console.log(stringJSON);
+  if (!json.email) {
 
-  let jsonParse = JSON.parse(stringJSON);
-  
-  console.log(jsonParse);
+    console.error("O campo e-mail deve preenchido!");
+
+  } else if (!json.password) {
+
+    console.error("O camppo password deve ser preechido!");
+
+  } else {
+
+    console.info("Dados validados com sucesso!");
+  }
 
 });
